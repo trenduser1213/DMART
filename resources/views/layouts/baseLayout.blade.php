@@ -25,6 +25,8 @@
 
 
 </html> --}}
+@include('sweetalert::alert')
+
 <!DOCTYPE html>
 <html>
 <head>

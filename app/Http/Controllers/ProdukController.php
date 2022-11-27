@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\produk;
-use App\Http\Requests\StoreprodukRequest;
-use App\Http\Requests\UpdateprodukRequest;
+use Illuminate\Http\Request;
+use Yajra\Datatables\Datatables;
+// use App\Http\Requests\StoreprodukRequest;
+// use App\Http\Requests\UpdateprodukRequest;
 
 class ProdukController extends Controller
 {
@@ -15,9 +17,26 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        //
+        return view('produk.index');
     }
-
+    public function data()
+    {
+        $produk = Produk::orderBy('id_Produk')->get();
+        // dd($produk);
+        return datatables()
+                ->of($produk)
+                ->addIndexColumn()
+                ->addColumn('aksi',function($produk){
+                    return '
+                        <div class="btn-group">
+                            <button class="btn btn-info btn-xs" onclick="editForm(`' . route('produk.update',$produk->id_kategori) .'`)"><i class="fa fa-edit"></i></button>
+                            <button class="btn btn-danger btn-xs" onclick="hapusData(`'. route('produk.destroy',$produk->id_kategori) .'`)"><i class="fa fa-trash"></i></button>
+                        </div>
+                    ';
+                })
+                ->rawColumns(['aksi'])
+                ->make(true);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -45,9 +64,11 @@ class ProdukController extends Controller
      * @param  \App\Models\produk  $produk
      * @return \Illuminate\Http\Response
      */
-    public function show(produk $produk)
+    public function show($id)
     {
-        //
+        $produk = produk::find($id);
+
+        return response()->json($produk);
     }
 
     /**

@@ -3,7 +3,7 @@
 @section('view')
 <section class="content-header">
     <h1>
-        Kategori
+        Produk
         <small>Version 2.0</small>
     </h1>
 </section>
@@ -19,8 +19,14 @@
             <table id="tableKategori" class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th width="10%">no</th>
+                        <th width="5%">no</th>
+                        <th>Nama Produk</th>
+                        <th>Merk</th>
                         <th>Kategori</th>
+                        <th>Harga Beli</th>
+                        <th>Harga jual</th>
+                        <th>diskon</th>
+                        <th>stok</th>
                         <th width="10%"><i class="fa fa-gear"></i>action</th>
                     </tr>
                 </thead>
@@ -28,8 +34,14 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th width="10%">no</th>
+                        <th width="5%">no</th>
+                        <th>Nama Produk</th>
+                        <th>Merk</th>
                         <th>Kategori</th>
+                        <th>Harga Beli</th>
+                        <th>Harga jual</th>
+                        <th>diskon</th>
+                        <th>stok</th>
                         <th width="10%"><i class="fa fa-gear"></i>action</th>
                     </tr>
                 </tfoot>
@@ -58,11 +70,18 @@
             , info : true
             , autoWidth : false,
             ajax        : {
-                  url     :'{{ route('kategori.data')}}',
+                  url     :'{{ route('produk.data')}}',
             },
             columns :[
               {data : 'DT_RowIndex', searchable: false, sortable: false },
-              {data : 'nama_kategori'},
+            //   {data : 'nama_produk','merk','id_kategori','harga_beli','harga_jual','diskon','stok'},
+                {data : 'nama_produk'},
+                {data : 'merk'},
+                {data : 'id_kategori'},
+                {data : 'harga_beli'},
+                {data : 'harga_jual'},
+                {data : 'diskon'},
+                {data : 'stok'},
               {data : 'aksi', searchable: false, sortable: false },
             ]
         });

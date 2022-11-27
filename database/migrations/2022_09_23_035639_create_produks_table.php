@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('produks', function (Blueprint $table) {
             $table->id('id_produk');
-            $table->integer('id_kategori');
+            $table->unsignedBigInteger('id_kategori');
+            $table->foreign('id_kategori')->references('id_kategori')->on('kategoris')->onUpdate('restrict')->onDelete('restrict');
             $table->string('nama_produk');
             $table->string('merk');
             $table->integer('harga_beli');

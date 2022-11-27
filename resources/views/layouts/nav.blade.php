@@ -438,64 +438,64 @@
               <span>Kategori</span>
             </a>
           </li>
-          <li class="treeview">
-              <a href="#">
+          <li class="">
+              <a href="{{ route('produk.index')}}">
                 <i class="fa fa-cubes"></i>
                 <span>produk</span>
               </a>
           </li>
-          <li class="treeview">
+          <li class="">
               <a href="#">
                 <i class="fa fa-id-card"></i>
                 <span>Member</span>
               </a>
           </li>
-          <li class="treeview">
+          <li class="">
               <a href="#">
                 <i class="fa fa-truck"></i>
                 <span>Supplier</span>
               </a>
           </li>
           <li class="header">Transaksi</li>
-          <li class="treeview">
+          <li class="">
               <a href="#">
                 <i class="fa fa-money"></i>
                 <span>Pengeluaran</span>
               </a>
           </li>
-          <li class="treeview">
+          <li class="">
               <a href="#">
                 <i class="fa fa-download"></i>
                 <span>Pembelian</span>
               </a>
           </li>
-          <li class="treeview">
+          <li class="">
               <a href="#">
                 <i class="fa fa-upload"></i>
                 <span>Penjualan</span>
               </a>
           </li>
-          <li class="treeview">
+          <li class="">
               <a href="#">
                 <i class="fa fa-cart-arrow-down"></i>
                 <span>Transaksi lama<span>
               </a>
           </li>
-          <li class="treeview">
+          <li class="">
               <a href="#">
                 <i class="fa fa-cart-plus"></i>
                 <span>Transaksi baru<span>
               </a>
           </li>
           <li class="header">report</li>
-          <li class="treeview">
+          <li class="">
               <a href="#">
                 <i class="fa fa-file-pdf-o"></i>
                 <span>Laporan</span>
               </a>
           </li>
           <li class="header">system</li>
-          <li class="treeview">
+          <li class="">
               <a href="#">
                 <i class="fa fa-gears"></i>
                 <span>settings</span>

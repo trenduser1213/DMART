@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ProdukController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +22,13 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::get('/dashboard', function () {
         return view('welcome');
     })->name('dashboard');
-    Route::get('/kategori/dat', [KategoriController::class,'data'])->name('kategori.data');
     // Route::get('/kategori', [KategoriController::class,'index'])->name('kategori');
+    Route::get('/kategori/data', [KategoriController::class,'data'])->name('kategori.data');
     Route::resource('/kategori',KategoriController::class);
+    
+    Route::get('/produk/data', [ProdukController::class,'data'])->name('produk.data');
+    Route::resource('/produk',ProdukController::class);
+
 });
 
 route::group(['middleware'=>'auth'],function(){
